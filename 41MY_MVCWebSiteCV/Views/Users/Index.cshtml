@@ -1,0 +1,30 @@
+﻿@using _41MY_MVCWebSiteCV.Models.Entity
+@model List<Tbl_Users>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Kullanıcı Paneli</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Kullanıcı Adı</th>
+        <th>Şifre</th>        
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.UserName</td>
+            @*<td>@x.Password</td>*@
+            <td>@(string.IsNullOrEmpty(x.Password) ? "Geçersiz Şifre" : new string('*', x.Password.Length))</td> @*Şifreyi * şeklinde gösterme*@
+            <td><a href="/Users/DeleteUser/@x.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Users/GetUser/@x.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Users/AddUser/" class="btn btn-primary">Yeni Kullanıcı Ekle</a>
+

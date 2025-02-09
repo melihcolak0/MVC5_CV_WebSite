@@ -1,0 +1,18 @@
+﻿@model _41MY_MVCWebSiteCV.Models.Entity.Tbl_Abilities
+@{
+    ViewBag.Title = "AddAbility";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Yetenek Ekleme Sayfası</h2>
+<br />
+<form method="post">   
+    @Html.Label("Yetenek")
+    @Html.TextBoxFor(x => x.Ability, new { @class = "form-control" })
+    <br />
+    @Html.Label("Oran")
+    @Html.TextBoxFor(x => x.Rate, new { @class = "form-control" })    
+    <br />
+    <button class="btn btn-info">Yeni Yetenek Ekle</button>
+</form>
+

@@ -1,0 +1,21 @@
+﻿@model _41MY_MVCWebSiteCV.Models.Entity.Tbl_Abilities
+@{
+    ViewBag.Title = "GetAbility";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yetenek Güncelleme Sayfası</h2>
+<br />
+<form method="post">
+    @Html.Label("Id")
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.Label("Yetenek")
+    @Html.TextBoxFor(x => x.Ability, new { @class = "form-control" })
+    <br />
+    @Html.Label("Oran")
+    @Html.TextBoxFor(x => x.Rate, new { @class = "form-control" })   
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+</form>
+

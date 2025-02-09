@@ -1,0 +1,18 @@
+﻿@using _41MY_MVCWebSiteCV.Models.Entity
+@model List<Tbl_SocialMedia>
+<div class="social-icons">
+    @foreach (var x in Model)
+    {
+        <a class="social-icon" href="@x.Link"><i class="@x.Icon"></i></a>
+    }
+</div>
+
+
+@*  
+    <a class="social-icon" href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
+    <a class="social-icon" href="#"><i class="fab fa-facebook-f"></i></a>
+    <a class="social-icon" href="#"><i class="fab fa-youtube"></i></a>
+    <a class="social-icon" href="#"><i class="fab fa-github"></i></a>
+*@
+

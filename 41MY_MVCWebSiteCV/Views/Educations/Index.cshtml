@@ -1,0 +1,35 @@
+﻿@using _41MY_MVCWebSiteCV.Models.Entity
+@model List<Tbl_Education>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Eğitimlerim Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Başlık</th>
+        <th>Alt Başlık</th>
+        <th>Alt Başlık2</th>
+        <th>GANO</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.Title</td>
+            <td>@x.SubHeading</td>
+            <td>@x.SubHeading2</td>
+            <td>@x.GPA</td>
+            <td>@x.Date</td>
+            <td><a href="/Educations/DeleteEducation/@x.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Educations/GetEducation/@x.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Educations/AddEducation/" class="btn btn-primary">Yeni Eğitim Ekle</a>
+

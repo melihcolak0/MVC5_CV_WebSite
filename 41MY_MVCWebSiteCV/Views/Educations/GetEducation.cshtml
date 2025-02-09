@@ -1,0 +1,35 @@
+﻿@model _41MY_MVCWebSiteCV.Models.Entity.Tbl_Education
+@{
+    ViewBag.Title = "GetEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Eğitim Güncelleme Sayfası</h2>
+<br />
+<form method="post">
+    @Html.Label("Id")
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })    
+    <br />
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Alt Başlık")
+    @Html.TextBoxFor(x => x.SubHeading, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SubHeading, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Alt Başlık 2")
+    @Html.TextBoxFor(x => x.SubHeading2, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SubHeading2, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("GANO")
+    @Html.TextBoxFor(x => x.GPA, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.GPA, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Date, "", new { @style = "color:red" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+</form>
+

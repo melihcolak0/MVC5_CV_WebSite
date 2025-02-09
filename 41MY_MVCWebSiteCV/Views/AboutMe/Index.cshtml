@@ -1,0 +1,41 @@
+﻿
+@using _41MY_MVCWebSiteCV.Models.Entity
+@model List<Tbl_AboutMe>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Hakkımda Sayfası</h2>
+<br />
+<form method="post">
+    @foreach (var x in Model)
+    {
+        <label>Id</label>
+        <input type="text" name="Id" value="@x.Id" class="form-control" readonly />
+        <br />
+        <label>Ad</label>
+        <input type="text" name="Name" value="@x.Name" class="form-control" />
+        <br />
+        <label>Soyad</label>
+        <input type="text" name="Surname" value="@x.Surname" class="form-control" />
+        <br />
+        <label>Adres</label>
+        <input type="text" name="Address" value="@x.Address" class="form-control" />
+        <br />
+        <label>Telefon Numarası</label>
+        <input type="text" name="PhoneNumber" value="@x.PhoneNumber" class="form-control" />
+        <br />
+        <label>E-Mail</label>
+        <input type="text" name="EMail" value="@x.EMail" class="form-control" />
+        <br />
+        <label>Resim</label>
+        <input type="text" name="Image" value="@x.Image" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <textarea class="form-control" rows="5" name="Description">@x.Description</textarea>
+        <br />
+    }
+    <button class="btn btn-info">Güncelle</button>
+</form>
+

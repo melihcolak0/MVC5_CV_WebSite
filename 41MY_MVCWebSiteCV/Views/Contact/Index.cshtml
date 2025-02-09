@@ -1,0 +1,64 @@
+﻿
+@using _41MY_MVCWebSiteCV.Models.Entity
+@model List<Tbl_Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <br />
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"> İletişim Paneli</h3>
+                        </div><!-- /.card-header -->
+                        <div class="card-body">                            
+                                <div class="tab-pane" id="timeline">
+                                    <!-- The timeline -->
+                                    <div class="timeline timeline-inverse">
+                                        @foreach (var x in Model)
+                                        {
+                                        <!-- timeline time label -->
+                                        <div class="time-label">
+                                            <span class="bg-info">
+                                                @(((DateTime)x.Date).ToString("dd-MMMM-yyyy"))
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-comments bg-warning"></i>
+                                            <div class="timeline-item">
+                                                <span class="time"><i class="far fa-envelope"></i> @x.EMail</span>
+                                                <h3 class="timeline-header"><a href="#">@x.NameAndSurname</a></h3>
+                                                <div class="timeline-header">
+                                                    Konu: @x.Subject
+                                                </div>
+                                                <div class="timeline-body">
+                                                    @x.Message
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        }
+                                    </div>
+                                </div>                            
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+</body>
+</html>
